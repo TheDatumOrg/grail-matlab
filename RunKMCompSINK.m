@@ -27,7 +27,7 @@ function RunKMCompSINK(DataSetStartIndex, DataSetEndIndex, gamma)
             Results(i,1) = DistComp;
             Results(i,2) = toc;
             
-            dlmwrite( strcat( '/project2/aelmore/jopa/UCR2018/KernelMatricesSINK/',char(Datasets(i)),'/', char(Datasets(i)), '_SINK_Gamma_', num2str(gamma) ,'.kernelmatrix'), KM, 'delimiter', '\t');
+            dlmwrite( strcat( '/project2/aelmore/jopa/KernelMatricesSINK/',char(Datasets(i)),'/', char(Datasets(i)), '_SINK_Gamma_', num2str(gamma) ,'.kernelmatrix'), KM, 'delimiter', '\t');
             dlmwrite( strcat( '/project2/aelmore/jopa/GRAIL/RunKMCompSINK/', 'RunKMCompSINK_Gamma_', num2str(gamma), '_Dataset_' , num2str(i)), Results, 'delimiter', '\t');
    
         end
