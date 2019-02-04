@@ -1,7 +1,7 @@
 function RunKMCompSINK(DataSetStartIndex, DataSetEndIndex, gamma)
 
     % first 2 values are '.' and '..' - UCR Archive 2018 version has 128 datasets
-    dir_struct = dir('/tartarus/DATASETS/UCR2018/');
+    dir_struct = dir('/project2/aelmore/jopa/UCR2018/');
     Datasets = {dir_struct(3:130).name};
                      
     % Sort Datasets
@@ -27,8 +27,8 @@ function RunKMCompSINK(DataSetStartIndex, DataSetEndIndex, gamma)
             Results(i,1) = DistComp;
             Results(i,2) = toc;
             
-            dlmwrite( strcat( '/tartarus/jopa/Projects/UCR2018/KernelMatricesSINK/',char(Datasets(i)),'/', char(Datasets(i)), '_SINK_Gamma_', num2str(gamma) ,'.kernelmatrix'), KM, 'delimiter', '\t');
-            dlmwrite( strcat( '/tartarus/jopa/Projects/GRAIL/RunKMCompSINK/', 'RunKMCompSINK_Gamma_', num2str(gamma), '_Dataset_' , num2str(i)), Results, 'delimiter', '\t');
+            dlmwrite( strcat( '/project2/aelmore/jopa/UCR2018/KernelMatricesSINK/',char(Datasets(i)),'/', char(Datasets(i)), '_SINK_Gamma_', num2str(gamma) ,'.kernelmatrix'), KM, 'delimiter', '\t');
+            dlmwrite( strcat( '/project2/aelmore/jopa/GRAIL/RunKMCompSINK/', 'RunKMCompSINK_Gamma_', num2str(gamma), '_Dataset_' , num2str(i)), Results, 'delimiter', '\t');
    
         end
         
