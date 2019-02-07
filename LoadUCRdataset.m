@@ -1,7 +1,7 @@
 function DS = LoadUCRdataset(datasetname)
 
-    TRAIN = load(['/project2/aelmore/jopa/UCR2018/',datasetname,'/',datasetname,'_TRAIN']);
-    TEST  = load(['/project2/aelmore/jopa/UCR2018/',datasetname,'/',datasetname,'_TEST']);
+    TRAIN = load(['/rigel/dsi/users/ikp2103/JOPA/GRAIL/UCR2018/',datasetname,'/',datasetname,'_TRAIN']);
+    TEST  = load(['/rigel/dsi/users/ikp2103/JOPA/GRAIL/UCR2018/',datasetname,'/',datasetname,'_TEST']);
 
     TRAIN_labels = TRAIN(:,1);
     TRAIN(:,1) = [];

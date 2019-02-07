@@ -8,12 +8,12 @@ function [KM, DistComp] = KMCompGAK(X, sigma)
 
     for i=1:m-1
         disp(i);
-        rowi = X(i,:);    
+        rowi = X(i,:);
            for j=i+1:m
                 rowj = X(j,:); 
                 KM(i,j) = logGAK(rowi',rowj',sigma,0);
                 DistComp = DistComp+1;
-           end    
+           end             
     end
 
     for i=1:m-1

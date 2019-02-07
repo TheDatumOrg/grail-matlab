@@ -1,7 +1,7 @@
 function RunOneNNGAKTiming(DataSetStartIndex, DataSetEndIndex)  
     
     % first 2 values are '.' and '..' - UCR Archive 2018 version has 128 datasets
-    dir_struct = dir('/project2/aelmore/jopa/UCR2018/');
+    dir_struct = dir('/rigel/dsi/users/ikp2103/JOPA/GRAIL/UCR2018/');
     Datasets = {dir_struct(3:130).name};
                      
     % Sort Datasets
@@ -23,7 +23,7 @@ function RunOneNNGAKTiming(DataSetStartIndex, DataSetEndIndex)
                     Results(i,1) = OneNNAcc;
                     Results(i,2) = toc;
  
-                    dlmwrite( strcat('/project2/aelmore/jopa/GRAIL/RunOneNNGAKTiming/', 'RunOneNNGAKTiming_', num2str(i)), Results, 'delimiter', '\t');
+                    dlmwrite( strcat('/rigel/dsi/users/ikp2103/JOPA/GRAIL/RunOneNNGAKTiming/', 'RunOneNNGAKTiming_', num2str(i)), Results, 'delimiter', '\t');
    
             end
             

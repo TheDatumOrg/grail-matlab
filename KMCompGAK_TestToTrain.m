@@ -14,5 +14,4 @@ function [KM,DistComp] = KMCompGAK_TestToTrain(X,Y,sigma)
                     DistComp = DistComp+1;
             end    
     end
-
 end
