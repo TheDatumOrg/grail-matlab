@@ -18,7 +18,7 @@ function RunOneNNGAKTiming(DataSetStartIndex, DataSetEndIndex)
                     DS = LoadUCRdataset(char(Datasets(i)));
                     
                     tic;
-                    OneNNAcc = OneNNClassifierGAK(DS,10);d
+                    OneNNAcc = OneNNClassifierGAK(DS,10);
                     
                     Results(i,1) = OneNNAcc;
                     Results(i,2) = toc;
