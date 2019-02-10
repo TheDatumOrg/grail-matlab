@@ -1,7 +1,7 @@
 function RunKMCompGAK(DataSetStartIndex, DataSetEndIndex, TrainKM, sigma)
 
     % first 2 values are '.' and '..' - UCR Archive 2018 version has 128 datasets
-    dir_struct = dir('/rigel/dsi/users/ikp2103/JOPA/GRAIL/UCR2018/');
+    dir_struct = dir('/rigel/dsi/users/ikp2103/JOPA/GRAIL2/UCR2018/');
     Datasets = {dir_struct(3:130).name};
                      
     % Sort Datasets
@@ -9,6 +9,11 @@ function RunKMCompGAK(DataSetStartIndex, DataSetEndIndex, TrainKM, sigma)
     [Datasets, ~] = sort(Datasets);
 
     disp(sigma);
+    
+    poolobj = gcp('nocreate');
+    delete(poolobj);
+    
+    parpool(20);
 
     for i = 1:length(Datasets)
         
@@ -43,8 +48,8 @@ function RunKMCompGAK(DataSetStartIndex, DataSetEndIndex, TrainKM, sigma)
                 Results(i,1) = DistComp; 
                 Results(i,2) = toc;
 
-                dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL/KernelMatricesGAK/',char(Datasets(i)),'/', char(Datasets(i)), '_GAK_Sigma_', num2str(sigma) ,'_TRAIN.kernelmatrix'), KMTrain, 'delimiter', '\t');
-                dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL/RunKMCompGAK/', 'RunKMCompGAK_GAK_TrainToTrain_Sigma_', num2str(sigma), '_TrainToTrain_Dataset_' , num2str(i) ), Results, 'delimiter', '\t');
+                dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/KernelMatricesGAK/',char(Datasets(i)),'/', char(Datasets(i)), '_GAK_Sigma_', num2str(sigma) ,'_TRAIN.kernelmatrix'), KMTrain, 'delimiter', '\t');
+                dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunKMCompGAK/', 'RunKMCompGAK_GAK_TrainToTrain_Sigma_', num2str(sigma), '_TrainToTrain_Dataset_' , num2str(i) ), Results, 'delimiter', '\t');
 
 
             else
@@ -54,8 +59,8 @@ function RunKMCompGAK(DataSetStartIndex, DataSetEndIndex, TrainKM, sigma)
                 Results(i,3) = DistComp2;
                 Results(i,4) = toc;
                 
-                dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL/KernelMatricesGAK/',char(Datasets(i)),'/', char(Datasets(i)), '_GAK_Sigma_', num2str(sigma) ,'_TESTTOTRAIN.kernelmatrix'), KMTestToTrain, 'delimiter', '\t');          
-                dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL/RunKMCompGAK/', 'RunKMCompGAK_GAK_TestToTrain_Sigma_', num2str(sigma), '_TestToTrain_Dataset_' , num2str(i) ), Results, 'delimiter', '\t');
+                dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/KernelMatricesGAK/',char(Datasets(i)),'/', char(Datasets(i)), '_GAK_Sigma_', num2str(sigma) ,'_TESTTOTRAIN.kernelmatrix'), KMTestToTrain, 'delimiter', '\t');          
+                dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunKMCompGAK/', 'RunKMCompGAK_GAK_TestToTrain_Sigma_', num2str(sigma), '_TestToTrain_Dataset_' , num2str(i) ), Results, 'delimiter', '\t');
  
                 
             end
@@ -63,5 +68,8 @@ function RunKMCompGAK(DataSetStartIndex, DataSetEndIndex, TrainKM, sigma)
         end
         
     end
+    
+    poolobj = gcp('nocreate');
+    delete(poolobj);
     
 end

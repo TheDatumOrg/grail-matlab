@@ -6,14 +6,16 @@ function [KM, DistComp] = KMCompGAK(X, sigma)
 
     DistComp = 0;
 
-    for i=1:m-1
+    parfor i=1:m-1
         disp(i);
         rowi = X(i,:);
+        tmpVector = zeros(1,m);
            for j=i+1:m
                 rowj = X(j,:); 
-                KM(i,j) = logGAK(rowi',rowj',sigma,0);
+                tmpVector(j) = logGAK(rowi',rowj',sigma,0);
                 DistComp = DistComp+1;
-           end             
+           end    
+        KM(i,:) = tmpVector;   
     end
 
     for i=1:m-1
