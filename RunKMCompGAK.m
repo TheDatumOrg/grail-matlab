@@ -10,7 +10,7 @@ function RunKMCompGAK(DataSetStartIndex, DataSetEndIndex, TrainKM, sigma)
 
     disp(sigma);
     
-    rng(DataSetStartIndex);
+    rng(DataSetStartIndex*sigma);
     pause(180*rand);
     
     poolobj = gcp('nocreate');
