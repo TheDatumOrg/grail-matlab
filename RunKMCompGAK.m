@@ -10,6 +10,9 @@ function RunKMCompGAK(DataSetStartIndex, DataSetEndIndex, TrainKM, sigma)
 
     disp(sigma);
     
+    rng(DataSetStartIndex);
+    pause(180*rand);
+    
     poolobj = gcp('nocreate');
     delete(poolobj);
     
