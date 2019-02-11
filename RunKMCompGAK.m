@@ -13,6 +13,8 @@ function RunKMCompGAK(DataSetStartIndex, DataSetEndIndex, TrainKM, sigma)
     rng(DataSetStartIndex*sigma);
     pause(180*rand);
     
+    distcomp.feature( 'LocalUseMpiexec', false )
+
     poolobj = gcp('nocreate');
     delete(poolobj);
     
