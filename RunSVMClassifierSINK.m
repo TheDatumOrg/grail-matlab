@@ -12,6 +12,8 @@ function RunSVMClassifierSINK(DataSetStartIndex, DataSetEndIndex)
     
     addpath(genpath('SVMMatlab/.'));
     
+    distcomp.feature( 'LocalUseMpiexec', false )
+    
     rng(ceil(DataSetStartIndex*100))
     pause(300*rand);
         
