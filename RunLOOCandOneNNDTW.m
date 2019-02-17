@@ -12,8 +12,8 @@ function RunLOOCandOneNNDTW(DataSetStartIndex, DataSetEndIndex)
 
             if (i>=DataSetStartIndex && i<=DataSetEndIndex)
 
-                    LeaveOneOutAccuracies = zeros(length(Datasets),35);
-                    LeaveOneOutRuntimes = zeros(length(Datasets),35);
+                    LeaveOneOutAccuracies = zeros(length(Datasets),20);
+                    LeaveOneOutRuntimes = zeros(length(Datasets),20);
     
                     Results = zeros(length(Datasets),6);
                 
@@ -22,7 +22,7 @@ function RunLOOCandOneNNDTW(DataSetStartIndex, DataSetEndIndex)
                     
                     TSLength = length(DS.Data(1,:));
                     
-                    for gamma=1:35
+                    for gamma=1:20
 
                         gammaTmp = gamma-1
                         window = floor(gammaTmp/100 * TSLength); 
