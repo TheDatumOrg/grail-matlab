@@ -16,7 +16,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
                     %DS = LoadUCRdataset(char(Datasets(i)));
                     %disp([char(Datasets(i)),',',num2str(length(DS.ClassNames)),',',num2str(DS.TrainInstancesCount),',',num2str(DS.TestInstancesCount),',',num2str(length(DS.Train(1,:)))]);
                     
-                    ResultsTmp = dlmread( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunClusteringKShapeORIGINAL/','RunClusteringKShapeORIGINAL_Dataset_', num2str(i)) );
+                    ResultsTmp = dlmread( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunClusteringKShape/','RunClusteringKShape_Dataset_', num2str(i)) );
                     
                     Results(i,:) = ResultsTmp(i,:);
                     
@@ -25,6 +25,6 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
            
     end
             
-    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunClusteringKShapeORIGINAL_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
+    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunClusteringKShape_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
 end
