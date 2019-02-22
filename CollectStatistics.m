@@ -16,7 +16,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
                     %DS = LoadUCRdataset(char(Datasets(i)));
                     %disp([char(Datasets(i)),',',num2str(length(DS.ClassNames)),',',num2str(DS.TrainInstancesCount),',',num2str(DS.TestInstancesCount),',',num2str(length(DS.Train(1,:)))]);
                     
-                    ResultsTmp = dlmread( strcat('/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunOneNNFFTED/', 'RunOneNNFFTED_Dataset_', num2str(i), '_NumOfCoeff_',num2str(5)) );
+                    ResultsTmp = dlmread( strcat('/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunOneNNDTW/', 'RunOneNNDTW_Dataset_', num2str(i), '_WindowPercent_', num2str(5)) );
                     
                     Results(i,:) = ResultsTmp(i,:);
                     
@@ -25,6 +25,6 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
            
     end
             
-    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNFFTED5_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
+    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNDTW5_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
 end
