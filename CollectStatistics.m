@@ -16,7 +16,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
                     %DS = LoadUCRdataset(char(Datasets(i)));
                     %disp([char(Datasets(i)),',',num2str(length(DS.ClassNames)),',',num2str(DS.TrainInstancesCount),',',num2str(DS.TestInstancesCount),',',num2str(length(DS.Train(1,:)))]);
                     
-                    ResultsTmp = dlmread( strcat('RunOneNNGAKTiming/','RunOneNNGAKTiming_', num2str(i), '_', num2str(i)) );
+                    ResultsTmp = dlmread( strcat('RunOneNNGAKTiming/','RunOneNNGAKTiming_', num2str(i)) );
                     
                     Results(i,:) = ResultsTmp(i,:);
                     
