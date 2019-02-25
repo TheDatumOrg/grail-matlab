@@ -8,6 +8,10 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
     
     [Datasets, DSOrder] = sort(Datasets);
     
+    
+    FourierEnergy = 1;
+    DatasetPercentile = 100;
+    
     for i = 1:length(Datasets)
 
             if (i>=DataSetStartIndex && i<=DataSetEndIndex)
@@ -16,7 +20,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
                     %DS = LoadUCRdataset(char(Datasets(i)));
                     %disp([char(Datasets(i)),',',num2str(length(DS.ClassNames)),',',num2str(DS.TrainInstancesCount),',',num2str(DS.TestInstancesCount),',',num2str(length(DS.Train(1,:)))]);
                     
-                    ResultsTmp = dlmread( strcat('RunOneNNGAKTiming/','RunOneNNGAKTiming_', num2str(i)) );
+                    ResultsTmp = dlmread( strcat('/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunOneNNSINKCompressed/', 'RESULTS_RunOneNNSINKCompressed_FourierEnergy_', num2str(FourierEnergy), '_DatasetPercentile_', num2str(DatasetPercentile), '_Dataset_' ,num2str(i)) );
                     
                     Results(i,:) = ResultsTmp(i,:);
                     
@@ -25,6 +29,6 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
            
     end
             
-    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNGAKTiming_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
+    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNSINKCompressed_FourierEnergy_', num2str(FourierEnergy), '_DatasetPercentile_', num2str(DatasetPercentile),'_Datasets_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
 end
