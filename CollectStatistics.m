@@ -20,7 +20,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
                     %DS = LoadUCRdataset(char(Datasets(i)));
                     %disp([char(Datasets(i)),',',num2str(length(DS.ClassNames)),',',num2str(DS.TrainInstancesCount),',',num2str(DS.TestInstancesCount),',',num2str(length(DS.Train(1,:)))]);
                     
-                    ResultsTmp = dlmread( strcat('/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunOneNNSINKCompressed/', 'RESULTS_RunOneNNSINKCompressed_FourierEnergy_', num2str(FourierEnergy), '_DatasetPercentile_', num2str(DatasetPercentile), '_Dataset_' ,num2str(i)) );
+                    ResultsTmp = dlmread( strcat( 'RunClassificationZREP/RunClassificationZREP_Z10_KShape_', num2str(i),'.results') );
                     
                     Results(i,:) = ResultsTmp(i,:);
                     
@@ -29,6 +29,6 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
            
     end
             
-    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNSINKCompressed_FourierEnergy_', num2str(FourierEnergy), '_DatasetPercentile_', num2str(DatasetPercentile),'_Datasets_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
+    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunClassificationZREP_Z10_KShape_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
 end
