@@ -26,7 +26,7 @@ function RunClassificationZREP(DataSetStartIndex, DataSetEndIndex, Method)
                     for gammaIter = 1:20
                         
                         %ZRepresentation = dlmread( strcat( 'REPRESENTATIONSFULLKM/',char(Datasets(i)),'/','RepresentationFULLKM_', num2str(gammaValues(gammaIter)) ,'.Z5' ));
-                        ZRepresentation = dlmread( strcat( 'REPRESENTATIONSGamma', num2str(gamma),'/',char(Datasets(i)),'/','RepLearningFixedSamples', '_', char(Methods(Method)), '_', num2str(1) ,'.Z10'));
+                        ZRepresentation = dlmread( strcat( 'REPRESENTATIONSGamma', num2str(gamma),'/',char(Datasets(i)),'/','RepLearningFixedSamples', '_', char(Methods(Method)), '_', num2str(1) ,'.Ztop10'));
                         
                         acc = LeaveOneOutClassifierZREP(DS,ZRepresentation);
                         LeaveOneOutAccuracies(i,gammaIter) = acc;
@@ -36,7 +36,7 @@ function RunClassificationZREP(DataSetStartIndex, DataSetEndIndex, Method)
                     [MaxLeaveOneOutAcc,MaxLeaveOneOutAccGamma] = max(LeaveOneOutAccuracies(i,:));
                     
                     %ZRepresentation = dlmread( strcat( 'REPRESENTATIONSFULLKM/',char(Datasets(i)),'/','RepresentationFULLKM_', num2str(gammaValues(MaxLeaveOneOutAccGamma)) ,'.Z5' ));
-                    ZRepresentation = dlmread( strcat( 'REPRESENTATIONSGamma', num2str(gammaValues(MaxLeaveOneOutAccGamma)),'/',char(Datasets(i)),'/','RepLearningFixedSamples', '_', char(Methods(Method)), '_', num2str(1) ,'.Z10'));
+                    ZRepresentation = dlmread( strcat( 'REPRESENTATIONSGamma', num2str(gammaValues(MaxLeaveOneOutAccGamma)),'/',char(Datasets(i)),'/','RepLearningFixedSamples', '_', char(Methods(Method)), '_', num2str(1) ,'.Ztop10'));
                        
                     OneNNAcc = OneNNClassifierZREP(DS,ZRepresentation);
                     
