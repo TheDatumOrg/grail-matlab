@@ -23,7 +23,7 @@ function RunOneNNFFTED(DataSetStartIndex, DataSetEndIndex, NumOfCoeffs)
                     Results(i,1) = OneNNAcc;
                     Results(i,2) = toc;
    
-                    dlmwrite( strcat('/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunOneNNFFTED/', 'RunOneNNFFTED_Dataset_', num2str(i), '_NumOfCoeff_',num2str(NumOfCoeffs)), Results, 'delimiter', '\t');
+                    dlmwrite( strcat('/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RunOneNNTOPFFTED/', 'RunOneNNTOPFFTED_Dataset_', num2str(i), '_NumOfCoeff_',num2str(NumOfCoeffs)), Results, 'delimiter', '\t');
    
             end
             
