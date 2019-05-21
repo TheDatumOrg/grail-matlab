@@ -7,8 +7,6 @@ function RunSVMClassifierSINK(DataSetStartIndex, DataSetEndIndex)
     % Sort Datasets
     
     [Datasets, DSOrder] = sort(Datasets); 
-        
-    Results = zeros(length(Datasets),14);
     
     addpath(genpath('SVMMatlab/.'));
     
@@ -28,6 +26,8 @@ function RunSVMClassifierSINK(DataSetStartIndex, DataSetEndIndex)
 
             if (i>=DataSetStartIndex && i<=DataSetEndIndex)
 
+                    Results = zeros(length(Datasets),14);
+                    
                     disp(['Dataset being processed: ', char(Datasets(i))]);
                     DS = LoadUCRdataset(char(Datasets(i)));
 

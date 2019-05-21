@@ -7,8 +7,6 @@ function RunSVMClassifierGAK(DataSetStartIndex, DataSetEndIndex)
     % Sort Datasets
     
     [Datasets, DSOrder] = sort(Datasets); 
-        
-    Results = zeros(length(Datasets),13);
 
     addpath(genpath('SVMMatlab/.'));
     
@@ -26,6 +24,8 @@ function RunSVMClassifierGAK(DataSetStartIndex, DataSetEndIndex)
 
             if (i>=DataSetStartIndex && i<=DataSetEndIndex)
 
+                    Results = zeros(length(Datasets),13);
+                    
                     disp(['Dataset being processed: ', char(Datasets(i))]);
                     DS = LoadUCRdataset(char(Datasets(i)));
 
