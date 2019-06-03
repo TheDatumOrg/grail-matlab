@@ -32,7 +32,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex)
            
     end
             
-    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/VLDBGRAIL/RESULTS_RunOneNNED_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
+    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RESULTS_RunOneNNED_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
     %dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNTOPFFTED_NumOfCoeff_10_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
