@@ -32,7 +32,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex, FourierEnergy, Da
            
     end
             
-    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RESULTS_RunOneNNSBDCompressed_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex),'_DatasetPercentile_',num2str(DatasetPercentile),'_FourierEnergy_',num2str(FourierEnergy)    ), Results, 'delimiter', ',');
+    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RESULTS_RunOneNNSBDComp_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex),'_DP_',num2str(DatasetPercentile),'_FE_',num2str(FourierEnergy)    ), Results, 'delimiter', ',');
     
     %dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNTOPFFTED_NumOfCoeff_10_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
