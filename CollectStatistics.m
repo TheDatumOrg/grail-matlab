@@ -1,4 +1,4 @@
-function CollectStatistics(DataSetStartIndex, DataSetEndIndex, FourierEnergy, DatasetPercentile)  
+function CollectStatistics(DataSetStartIndex, DataSetEndIndex)  
 
     % first 2 values are '.' and '..' - UCR Archive 2018 version has 128 datasets
     dir_struct = dir('/rigel/dsi/users/ikp2103/VLDBGRAIL/UCR2018/');
@@ -20,7 +20,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex, FourierEnergy, Da
                     %disp([char(Datasets(i)),',',num2str(length(DS.ClassNames)),',',num2str(DS.TrainInstancesCount),',',num2str(DS.TestInstancesCount),',',num2str(length(DS.Train(1,:)))]);
                     
                     
-                    ResultsTmp = dlmread( strcat('/rigel/dsi/users/ikp2103/VLDBGRAIL/RunOneNNSBDCompressed/', 'RunOneNNSBD_Dataset_', num2str(i),'_DatasetPercentile_',num2str(DatasetPercentile),'_FourierEnergy_',num2str(FourierEnergy)) );
+                    ResultsTmp = dlmread( strcat('/rigel/dsi/users/ikp2103/VLDBGRAIL/RunLOOCandOneNNDTW/', 'RunLOOCandOneNNDTW_Dataset_', num2str(i)) );
                     
                     %ResultsTmp = dlmread( strcat( 'RunClassificationZREP/RunClassificationZREP_FULLKM_Z20_KShape_', num2str(i),'.results') );
                     %ResultsTmp = dlmread( strcat('RunOneNNTOPFFTED/', 'RunOneNNTOPFFTED_Dataset_', num2str(i), '_NumOfCoeff_',num2str(10)) );
@@ -32,7 +32,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex, FourierEnergy, Da
            
     end
             
-    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RESULTS_RunOneNNSBDComp_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex),'_DP_',num2str(DatasetPercentile),'_FE_',num2str(FourierEnergy)    ), Results, 'delimiter', ',');
+    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RESULTS_RunLOOCandOneNNDTW_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex) ), Results, 'delimiter', ',');
     
     %dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNTOPFFTED_NumOfCoeff_10_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
