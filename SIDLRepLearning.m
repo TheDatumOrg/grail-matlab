@@ -1,4 +1,4 @@
-function ZRep = SIDLRepLearning(dataset_name, DS, K, lambda, r)  
+function [ZRep,learn_time,fit_time] = SIDLRepLearning(dataset_name, DS, K, lambda, r)  
 % dataset_name is dataset name
 % DS is the dataset structure
 % K is number of coefficients [10, 20, 50]
@@ -19,8 +19,13 @@ test_y  = DS.TestClassLabels;
 
 c = 100;
 epsilon = 1e-3;
-maxIter = 50;
-maxInnerIter = 5;
+maxIter = 10;
+maxInnerIter = 3;
+
+%epsilon = 1e-3;
+%maxIter = 50;
+%maxInnerIter = 5;
+
 
     A_rand_init = randn(n_test, K);
 
