@@ -18,8 +18,8 @@ test_y  = DS.TestClassLabels;
 [n_test, p] = size(test_X);
 
 c = 100;
-epsilon = 1e-4;
-maxIter = 200;
+epsilon = 1e-3;
+maxIter = 50;
 maxInnerIter = 5;
 
     A_rand_init = randn(n_test, K);
