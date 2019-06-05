@@ -17,6 +17,7 @@ for i=n+1:n+size(Test,1)
 end
 n=size(X,2);
 %m=n*20*ceil(log(n));
+% so that it's comparable to our method
 m=n*coeffs;
 if (2*m>n*n)
 	m=floor(n*n/2);

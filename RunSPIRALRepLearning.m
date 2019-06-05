@@ -19,7 +19,7 @@ function RunSPIRALRepLearning(DataSetStartIndex, DataSetEndIndex)
                     
                     NumOfSamples = min(max( [4*length(DS.ClassNames), ceil(0.4*DS.DataInstancesCount),20] ),100);
 
-                    [ZRep,~,~]= SPIRALRepLearning(DS, NumOfSamples); 
+                    ZRep = SPIRALRepLearning(DS, NumOfSamples); 
                     dlmwrite( strcat( 'SPIRALREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '.Zrep'), ZRep, 'delimiter', '\t');
                             
                                    
