@@ -21,6 +21,9 @@ function RunSIDLRepLearning(DataSetStartIndex, DataSetEndIndex)
                     
                     for lambda = [0.1, 1, 10]
                         for r = [0.1, 0.25, 0.5]
+                            
+                            lambda
+                            r
                     
                             ZRep = SIDLRepLearning(char(Datasets(i)), DS, NumOfSamples, lambda, r); 
                             dlmwrite( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(lambda), '_R_', num2str(r) ,'.Zrep'), ZRep, 'delimiter', '\t');

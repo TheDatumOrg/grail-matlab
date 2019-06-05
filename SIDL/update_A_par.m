@@ -74,15 +74,15 @@ function [A, Offsets, F_all] = update_A_par(X, S, A, Offsets, lambda, maxIter, e
     end
 
     F_all = unsup_obj(X, S, A, Offsets, lambda);
-    fprintf('Current F_all: %f\n', F_all);
+    %fprintf('Current F_all: %f\n', F_all);
     F_obj(end+1) = F_all;
     if length(F_obj) > 1 & abs(F_obj(end) - F_obj(end-1)) / F_obj(end-1) < epsilon
-      fprintf('Updating A: Converged!\n\n');
+      %fprintf('Updating A: Converged!\n\n');
       return
     end
 
   end
 
-  fprintf('Updating A: Reached max iter.\n\n');
+  %fprintf('Updating A: Reached max iter.\n\n');
 end
 
