@@ -24,7 +24,7 @@ function [KMat, user_dtw_runtime] = dtw_similarity_cell(newX, baseX)
     KMat = zeros(m,n);
     user_dtw_runtime = 0;
     tic;
-    parfor i = 1 : m
+    for i = 1 : m
         Ei = zeros(1,n);
         data1 = newX(i,:)';
         for j = 1 : n
