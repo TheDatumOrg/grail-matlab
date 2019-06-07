@@ -82,11 +82,11 @@ for jjj = 1:1
         disp('LIBLinear performs basic grid search by varying lambda');
         disp('------------------------------------------------------');
         % Linear Kernel
-        %lambda_inverse = [1e-5 1e-4 1e-3 1e-2 1e-1 1 1e1 1e2 1e3 1e4 1e5];
+        lambda_inverse = [1e-5 1e-4 1e-3 1e-2 1e-1 1 1e1 1e2 1e3 1e4 1e5];
         %this is not a parameter relevant to the representations but
         %relevant to the classifier. We tune this parameter after the
         %extraction of representations as we do for GRAIL for fairness
-        lambda_inverse = 1;
+        %lambda_inverse = 1;
         for i=1:length(lambda_inverse)
             valAccu = zeros(1, CV);
             for cv = 1:CV

@@ -23,14 +23,14 @@ function RunRWSRepLearning(DataSetStartIndex, DataSetEndIndex)
                     %ZRep = SPIRALRepLearning(DS, NumOfSamples); 
                     
                     % Supervised Tuning
-                    %info = RWSTuneParameters(DS,NumOfSamples);
-                    %ZRepSup = RWSRepLearning(DS,info.sigma,NumOfSamples,1,info.DMax);
+                    info = RWSTuneParameters(DS,NumOfSamples);
+                    ZRepSup = RWSRepLearning(DS,info.sigma,NumOfSamples,1,info.DMax);
                     
                     % Without Tuning for Clustering
-                    %ZRepUNSup = RWSRepLearning(DS,1,NumOfSamples,1,25);
-                    ZRepUNSup = RWSRepLearning(DS,1000,NumOfSamples,1,25);
+                    ZRepUNSup = RWSRepLearning(DS,1,NumOfSamples,1,25);
+                    %ZRepUNSup = RWSRepLearning(DS,1000,NumOfSamples,1,25);
                     
-                    %dlmwrite( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_Supervised', '.Zrep'), ZRepSup, 'delimiter', '\t');
+                    dlmwrite( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_Supervised', '.Zrep'), ZRepSup, 'delimiter', '\t');
                     dlmwrite( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_UNSupervised_Sigma1000_DMax25', '.Zrep'), ZRepUNSup, 'delimiter', '\t');
                             
                                    
