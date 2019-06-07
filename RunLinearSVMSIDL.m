@@ -32,7 +32,7 @@ function RunLinearSVMSIDL(DataSetStartIndex, DataSetEndIndex)
                     DS = LoadUCRdataset(char(Datasets(i)));
 
                     [Thebestgamma,Thebestcost1,Thebestacc1,Thebestiming1] = GridSearchLinearSVM1(-10,1,20,DS.TrainInstancesCount,DS.TrainClassLabels,Datasets,i);
-                    [Thebestcost2,Thebestacc2,Thebestiming2] = GridSearchLinearSVM2(-10,0.1,20,DS.TrainInstancesCount,DS.TrainClassLabels,Datasets,i);
+                    [Thebestcost2,Thebestacc2,Thebestiming2] = GridSearchLinearSVM2(-10,0.1,20,DS.TrainInstancesCount,DS.TrainClassLabels,Datasets,i,Thebestgamma);
 
                     if Thebestgamma==1
                         ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(0.1), '_R_', num2str(0.1) ,'.Zrep')  );
@@ -199,7 +199,7 @@ end
 
 function [Thebestcost,Thebestacc,Thebestiming] = GridSearchLinearSVM2(GridStart,GridStep,GridEnd,TrainInstancesCount,TrainClassLabels,Datasets,DatasetsNumber,Thebestgamma)
 
-                    rep=1;
+                    %rep=1;
 
                     % Tuning Parameters
 
