@@ -74,7 +74,7 @@ function RunLinearSVMSPIRAL(DataSetStartIndex, DataSetEndIndex)
                     Results(i,10) = ModelTrainingRuntime;
                     Results(i,11) = PredictionRuntime;
                 
-                    dlmwrite( strcat('RunLinearSVMRWS/','RunLinearSVMRWS', '_Dataset_', num2str(i)) , Results, 'delimiter', '\t');
+                    dlmwrite( strcat('RunLinearSVMSPIRAL/','RunLinearSVMSPIRAL', '_Dataset_', num2str(i)) , Results, 'delimiter', '\t');
            
 
             end
