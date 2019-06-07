@@ -28,10 +28,10 @@ function RunRWSRepLearning(DataSetStartIndex, DataSetEndIndex)
                     
                     % Without Tuning for Clustering
                     %ZRepUNSup = RWSRepLearning(DS,1,NumOfSamples,1,25);
-                    ZRepUNSup = RWSRepLearning(DS,1,NumOfSamples,1,100);
+                    ZRepUNSup = RWSRepLearning(DS,1000,NumOfSamples,1,25);
                     
                     %dlmwrite( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_Supervised', '.Zrep'), ZRepSup, 'delimiter', '\t');
-                    dlmwrite( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_UNSupervised_Sigma1_DMax100', '.Zrep'), ZRepUNSup, 'delimiter', '\t');
+                    dlmwrite( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_UNSupervised_Sigma1000_DMax25', '.Zrep'), ZRepUNSup, 'delimiter', '\t');
                             
                                    
                                     
