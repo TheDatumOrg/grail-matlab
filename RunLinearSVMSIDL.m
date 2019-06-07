@@ -35,23 +35,23 @@ function RunLinearSVMSIDL(DataSetStartIndex, DataSetEndIndex)
                     [Thebestcost2,Thebestacc2,Thebestiming2] = GridSearchLinearSVM2(-10,0.1,20,DS.TrainInstancesCount,DS.TrainClassLabels,Datasets,i,Thebestgamma);
 
                     if Thebestgamma==1
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(0.1), '_R_', num2str(0.1) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(0.1), '_R_', num2str(0.1) ,'.Zrep')  );
                     elseif Thebestgamma==2
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(0.1), '_R_', num2str(0.25) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(0.1), '_R_', num2str(0.25) ,'.Zrep')  );
                     elseif Thebestgamma==3
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(0.1), '_R_', num2str(0.5) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(0.1), '_R_', num2str(0.5) ,'.Zrep')  );
                     elseif Thebestgamma==4
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(1), '_R_', num2str(0.1) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(1), '_R_', num2str(0.1) ,'.Zrep')  );
                     elseif Thebestgamma==5
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(1), '_R_', num2str(0.25) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(1), '_R_', num2str(0.25) ,'.Zrep')  );
                     elseif Thebestgamma==6
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(1), '_R_', num2str(0.5) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(1), '_R_', num2str(0.5) ,'.Zrep')  );
                     elseif Thebestgamma==7
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(10), '_R_', num2str(0.1) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(10), '_R_', num2str(0.1) ,'.Zrep')  );
                     elseif Thebestgamma==8
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(10), '_R_', num2str(0.25) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(10), '_R_', num2str(0.25) ,'.Zrep')  );
                     elseif Thebestgamma==9
-                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(DatasetsNumber)),'/','SIDLREPRESENTATIONS', '_L_', num2str(10), '_R_', num2str(0.5) ,'.Zrep')  );
+                        ZRep = dlmread( strcat( 'SIDLREPRESENTATIONS','/',char(Datasets(i)),'/','SIDLREPRESENTATIONS', '_L_', num2str(10), '_R_', num2str(0.5) ,'.Zrep')  );
                     end
                     
                     
