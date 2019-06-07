@@ -12,10 +12,10 @@ function RunLinearSVMRWS(DataSetStartIndex, DataSetEndIndex)
     
     addpath(genpath('LibLinear/matlab/.'));
     
-    distcomp.feature( 'LocalUseMpiexec', false )
+    %distcomp.feature( 'LocalUseMpiexec', false )
     
-    rng(ceil(DataSetStartIndex*100))
-    pause(100*rand);
+    %rng(ceil(DataSetStartIndex*100))
+    %pause(100*rand);
         
     poolobj = gcp('nocreate');
     delete(poolobj);
