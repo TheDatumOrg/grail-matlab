@@ -24,7 +24,9 @@ function RunClusteringRWS(DataSetStartIndex, DataSetEndIndex)
                         
                         % Extract Sample Points
 
-                        ZRep = dlmread( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_UNSupervised', '.Zrep')  );
+                        ZRep = dlmread( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_Supervised', '.Zrep')  );
+
+                        %ZRep = dlmread( strcat( 'RWSREPRESENTATIONS','/',char(Datasets(i)),'/','RWS_UNSupervised', '.Zrep')  );
 
                         tic;
                         
@@ -44,7 +46,7 @@ function RunClusteringRWS(DataSetStartIndex, DataSetEndIndex)
                     end
                     Results(i,:) = Results(i,:) ./ 10;
                     
-                    dlmwrite( strcat( 'RunClusteringRWS/','RunClusteringRWS_UNSupervised_Dataset_', num2str(i)), Results, 'delimiter', '\t');
+                    dlmwrite( strcat( 'RunClusteringRWS/','RunClusteringRWS_Supervised_Dataset_', num2str(i)), Results, 'delimiter', '\t');
    
             end
             
