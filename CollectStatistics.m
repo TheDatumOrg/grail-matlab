@@ -22,7 +22,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex, Method, gamma)
                     %disp([char(Datasets(i)),',',num2str(length(DS.ClassNames)),',',num2str(DS.TrainInstancesCount),',',num2str(DS.TestInstancesCount),',',num2str(length(DS.Train(1,:)))]);
                     
                     
-                    ResultsTmp = dlmread( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RunDictEvaluation/','RunDictEvaluation_10Rep_', char(Methods(Method)), '_', num2str(gamma), '_' ,num2str(i) ,'.results'); );
+                    ResultsTmp = dlmread( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RunDictEvaluation/','RunDictEvaluation_10Rep_', char(Methods(Method)), '_', num2str(gamma), '_' ,num2str(i) ,'.results') );
                     
                     %ResultsTmp = dlmread( strcat( 'RunClassificationZREP/RunClassificationZREP_FULLKM_Z20_KShape_', num2str(i),'.results') );
                     %ResultsTmp = dlmread( strcat('RunOneNNTOPFFTED/', 'RunOneNNTOPFFTED_Dataset_', num2str(i), '_NumOfCoeff_',num2str(10)) );
