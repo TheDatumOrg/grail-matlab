@@ -23,7 +23,7 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
     poolobj = gcp('nocreate');
     delete(poolobj);
     
-    parpool(10);
+    parpool(5);
     
     rng('default')
     
