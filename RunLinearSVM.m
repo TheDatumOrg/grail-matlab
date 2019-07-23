@@ -13,17 +13,17 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
 
     Results = zeros(length(Datasets),11);
     
-    addpath(genpath('LibLinear/matlab/.'));
+    %addpath(genpath('LibLinear/matlab/.'));
     
-    distcomp.feature( 'LocalUseMpiexec', false )
+    %distcomp.feature( 'LocalUseMpiexec', false )
     
-    rng(ceil(DataSetStartIndex*100))
-    pause(30*rand);
+    %rng(ceil(DataSetStartIndex*100))
+    %pause(30*rand);
         
-    poolobj = gcp('nocreate');
-    delete(poolobj);
+    %poolobj = gcp('nocreate');
+    %delete(poolobj);
     
-    parpool(20);
+    %parpool(20);
     
     rng('default')
     
@@ -31,6 +31,8 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
 
             if (i>=DataSetStartIndex && i<=DataSetEndIndex)
 
+                Results = zeros(length(Datasets),11);
+                
                     disp(['Dataset being processed: ', char(Datasets(i))]);
                     DS = LoadUCRdataset(char(Datasets(i)));
 
@@ -84,8 +86,8 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
             
     end
     
-    poolobj = gcp('nocreate');
-    delete(poolobj);
+    %poolobj = gcp('nocreate');
+    %delete(poolobj);
     
 end
 
@@ -117,7 +119,7 @@ function [Thebestgamma,Thebestcost,Thebestacc,Thebestiming] = GridSearchLinearSV
                     ZRepTrain = sparse(ZRepTrain);
                     
                       % grid search
-                      parfor log2cNEW = 1:length(log2cTmp)
+                      for log2cNEW = 1:length(log2cTmp)
                         
                         log2cNEW
                         tic;
@@ -175,7 +177,7 @@ function [Thebestcost,Thebestacc,Thebestiming] = GridSearchLinearSVM2(GridStart,
                     ZRepTrain = sparse(ZRepTrain);
                       
                       % grid search
-                      parfor log2cNEW = 1:length(log2cTmp)
+                      for log2cNEW = 1:length(log2cTmp)
                         
                         log2cNEW
                         tic;
