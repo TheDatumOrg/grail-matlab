@@ -15,7 +15,7 @@ function RunTestVarianceExact(DataSetStartIndex, DataSetEndIndex)
     poolobj = gcp('nocreate');
     delete(poolobj);
     
-    parpool(10);
+    parpool(5);
     
     for i = 1:length(Datasets)
 
