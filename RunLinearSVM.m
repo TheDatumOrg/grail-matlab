@@ -15,7 +15,7 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
     
     addpath(genpath('LibLinear/matlab/.'));
     
-    %distcomp.feature( 'LocalUseMpiexec', false )
+    distcomp.feature( 'LocalUseMpiexec', false )
     
     rng(ceil(DataSetStartIndex*100))
     pause(30*rand);
@@ -23,7 +23,7 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
     poolobj = gcp('nocreate');
     delete(poolobj);
     
-    parpool(5);
+    parpool(20);
     
     rng('default')
     
