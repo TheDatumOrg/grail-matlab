@@ -4,7 +4,7 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
     Types = [cellstr('Zexact'), 'Ztop5', 'Ztop10', 'Ztop20', 'Z99per', 'Z95per', 'Z90per', 'Z85per', 'Z80per'];
 
     % first 2 values are '.' and '..' - UCR Archive 2018 version has 128 datasets
-    dir_struct = dir('/rigel/dsi/users/ikp2103/JOPA/GRAIL2/UCR2018/');
+    dir_struct = dir('/rigel/dsi/users/ikp2103/VLDBGRAIL/UCR2018/');
     Datasets = {dir_struct(3:130).name};
                      
     % Sort Datasets
