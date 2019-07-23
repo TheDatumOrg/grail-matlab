@@ -34,6 +34,8 @@ function RunTestVarianceExact(DataSetStartIndex, DataSetEndIndex)
                   
                         KM = dlmread( strcat( 'KernelMatricesSINK/',char(Datasets(i)),'/', char(Datasets(i)), '_SINK_Gamma_', num2str(gamma) ,'.kernelmatrix'));
                         
+                        KM = KM(1:5000,1:5000);
+                        
                         [Variance,VarExplainedTop5,VarExplainedTop10,VarExplainedTop20,DimFor98,DimFor95,DimFor90,DimFor85,DimFor80,VarExplainedCumSum]=TestVarianceExact(KM);
                         
                         Z20 = dlmread( strcat( 'REPRESENTATIONSFULLKM/',char(Datasets(i)),'/','RepresentationFULLKM_', num2str(gamma) ,'.Z20') );
