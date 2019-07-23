@@ -15,7 +15,7 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
     
     addpath(genpath('LibLinear/matlab/.'));
     
-    distcomp.feature( 'LocalUseMpiexec', false )
+    %distcomp.feature( 'LocalUseMpiexec', false )
     
     rng(ceil(DataSetStartIndex*100))
     pause(30*rand);
