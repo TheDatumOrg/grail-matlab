@@ -13,7 +13,7 @@ function RunLinearSVM(DataSetStartIndex, DataSetEndIndex, Method, RepType)
 
     Results = zeros(length(Datasets),11);
     
-    %addpath(genpath('LibLinear/matlab/.'));
+    addpath(genpath('LibLinear/matlab/.'));
     
     %distcomp.feature( 'LocalUseMpiexec', false )
     
