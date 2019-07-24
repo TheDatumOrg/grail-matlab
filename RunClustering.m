@@ -25,7 +25,7 @@ function RunClustering(DataSetStartIndex, DataSetEndIndex, ClusteringMethod, Met
                     
                     %KM = DM2Kernel(KM);
                     
-                    for rep = 1 : 10
+                    for rep = 1 : 1
                         rep
                         rng(rep);
                         
@@ -107,7 +107,7 @@ function RunClustering(DataSetStartIndex, DataSetEndIndex, ClusteringMethod, Met
                         %
                         Results(i,:) = Results(i,:) + ResultsTmp;
                     end
-                    Results(i,:) = Results(i,:) ./ 10;
+                    Results(i,:) = Results(i,:) ./ 1;
            
             end
             
