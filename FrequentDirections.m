@@ -1,4 +1,5 @@
 % Outputs sketch of input matrix
+% Author: Terence Lim
 % Original paper/code by Liberty "Simple and Deterministric Matrix Sketching"
 
 function [sketch, vout] = FrequentDirections(A, ell)
@@ -24,6 +25,7 @@ for i=1:rows
   
   if (nextZeroRow > m)  % rotate
     [U, S, Vt] = svd(sketch,0);  % economy SVD: sketch = U S V 
+    disp(i);
     vout = Vt;
     s = diag(S);
     len = length(s);
