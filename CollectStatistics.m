@@ -1,6 +1,7 @@
-function CollectStatistics(DataSetStartIndex, DataSetEndIndex, Method, gamma)  
+function CollectStatistics(DataSetStartIndex, DataSetEndIndex, Method, RepType)  
 
-    Methods = [cellstr('Random'), 'KShape', 'AFKMC2', 'GibbsDPP','SRFT','LevScore','Gaussian'];
+    Methods = [cellstr('Random'), 'KShape'];
+    Types = [cellstr('Zexact'), 'Ztop5', 'Ztop10', 'Ztop20', 'Z99per', 'Z95per', 'Z90per', 'Z85per', 'Z80per'];
 
     % first 2 values are '.' and '..' - UCR Archive 2018 version has 128 datasets
     dir_struct = dir('/rigel/dsi/users/ikp2103/VLDBGRAIL/UCR2018/');
@@ -21,8 +22,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex, Method, gamma)
                     %DS = LoadUCRdataset(char(Datasets(i)));
                     %disp([char(Datasets(i)),',',num2str(length(DS.ClassNames)),',',num2str(DS.TrainInstancesCount),',',num2str(DS.TestInstancesCount),',',num2str(length(DS.Train(1,:)))]);
                     
-                    
-                    ResultsTmp = dlmread( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RunDictEvaluation/','RunDictEvaluation_10Rep_', char(Methods(Method)), '_', num2str(gamma), '_' ,num2str(i) ,'.results') );
+                    ResultsTmp = dlmread( strcat('RunLinearSVM/','RunLinearSVM_', char(Methods(Method)), '_', char(Types(RepType)), '_Dataset_', num2str(i)) );
                     
                     %ResultsTmp = dlmread( strcat( 'RunClassificationZREP/RunClassificationZREP_FULLKM_Z20_KShape_', num2str(i),'.results') );
                     %ResultsTmp = dlmread( strcat('RunOneNNTOPFFTED/', 'RunOneNNTOPFFTED_Dataset_', num2str(i), '_NumOfCoeff_',num2str(10)) );
@@ -34,7 +34,7 @@ function CollectStatistics(DataSetStartIndex, DataSetEndIndex, Method, gamma)
            
     end
             
-    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RESULTS_RunDictEvaluation_', char(Methods(Method)), '_', num2str(gamma), '_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
+    dlmwrite( strcat( '/rigel/dsi/users/ikp2103/VLDBGRAIL/RESULTS_RunLinearSVM_', char(Methods(Method)), '_', char(Types(RepType)), '_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
     %dlmwrite( strcat( '/rigel/dsi/users/ikp2103/JOPA/GRAIL2/RESULTS/RunOneNNTOPFFTED_NumOfCoeff_10_', num2str(DataSetStartIndex), '_', num2str(DataSetEndIndex)), Results, 'delimiter', ',');
     
