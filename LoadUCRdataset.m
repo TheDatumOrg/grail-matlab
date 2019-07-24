@@ -3,6 +3,7 @@ function DS = LoadUCRdataset(datasetname)
     TRAIN = load(['/rigel/dsi/users/ikp2103/VLDBGRAIL/UCR2018/',datasetname,'/',datasetname,'_TRAIN']);
     TEST  = load(['/rigel/dsi/users/ikp2103/VLDBGRAIL/UCR2018/',datasetname,'/',datasetname,'_TEST']);
 
+    rng('default');
     Train_numSamples = size(TRAIN,1);
     TRAIN = TRAIN(randperm(Train_numSamples),:); % shuffle the data
     
