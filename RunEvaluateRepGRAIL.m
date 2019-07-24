@@ -21,7 +21,7 @@ function RunEvaluateRepGRAIL(DataSetStartIndex, DataSetEndIndex, Method, gamma)
                     
                     KM = dlmread( strcat( 'KernelMatricesSINK/',char(Datasets(i)),'/', char(Datasets(i)), '_SINK_Gamma_', num2str(gamma) ,'.kernelmatrix') );
                     
-                    for rep = 1 : 10
+                    for rep = 1 : 1
                         rep
                         rng(rep);
                         
@@ -92,7 +92,7 @@ function RunEvaluateRepGRAIL(DataSetStartIndex, DataSetEndIndex, Method, gamma)
                     end
                     
             end
-                    Results(i,:) = Results(i,:) ./ 10;
+                    Results(i,:) = Results(i,:) ./ 1;
 
     end
             
