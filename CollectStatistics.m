@@ -1,4 +1,4 @@
-function CollectStatistics(DataSetStartIndex, DataSetEndIndex, Method, RepType)  
+function CollectStatistics(DataSetStartIndex, DataSetEndIndex)  
 
     Methods = [cellstr('Random'), 'KShape'];
     Types = [cellstr('Zexact'), 'Ztop5', 'Ztop10', 'Ztop20', 'Z99per', 'Z95per', 'Z90per', 'Z85per', 'Z80per'];
