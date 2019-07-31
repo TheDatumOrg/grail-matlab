@@ -1,10 +1,10 @@
 function cc_sequence = NCCc(x,y)
 
-if isrow(x)
-    x=x';
-end
 if isrow(y)
     y=y';
+end
+if isrow(x)
+    x=x';
 end
 
 len = max(length(x),length(y));
